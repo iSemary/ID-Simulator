@@ -1,38 +1,139 @@
+@font-face {
+    font-family: Lateef;
+    src: url(Assets/Lateef-Regular.ttf);
+}
+@font-face {
+    font-family: ArabicTwo_Bold;
+    src: url(Assets/ArabicTwo_Bold.ttf);
+}
+
 .App {
-  text-align: center;
+    margin: 0 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.id-img {
+    width: 500px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inputs-content .form-control {
+    margin-bottom: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.img-holder {
+    display: flex;
+    justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.img-container, .img-container-2 {
+    position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img-container > p, .img-container-2 > p {
+    position: absolute;
+    font-family: Lateef;
+    font-size: 22px;
+
+    /*top:0;*/
+    /*right: 0;*/
+    font-weight: bold;
+    text-align: right;
+    direction: rtl;
+    color: #000000;
+}
+
+.first-name {
+    top: 85px;
+    right: 32px;
+}
+
+.last-name {
+    top: 110px;
+    right: 32px;
+}
+
+.address {
+    top: 150px;
+    right: 32px;
+}
+
+.center-city {
+    top: 175px;
+    right: 32px;
+}
+
+.id-number {
+    top: 250px;
+    right: 25px;
+    letter-spacing: 4px;
+}
+
+.date-of-birth {
+    top: 236px;
+    left: 51px;
+    letter-spacing: 2px;
+    color: #2e2e2e !important;
+}
+
+.id-avatar {
+    position: absolute;
+    width: 130px;
+    height: 165px;
+    left: 15px;
+    top: 23px;
+    filter: grayscale(1);
+}
+
+.id-avatar-bg {
+    position: absolute;
+    left: 37px;
+    top: 49px;
+    background-color: white;
+    width: 86px;
+    height: 94px;
+    box-shadow: 0 0 19px 20px white;
+    opacity: 0.4;
+
+}
+
+.id-number-2 {
+    top: 30px;
+    right: 100px;
+    letter-spacing: 1px;
+}
+
+.date-created {
+    top: 30px;
+    left: 151px;
+}
+
+.job-title {
+    top: 54px;
+    right: 100px;
+    width: 262px;
+    line-height: 25px;
+}
+
+.gender {
+    top: 100px;
+    right: 100px;
+}
+
+.religion {
+    top: 100px;
+    right: 180px;
+}
+.social-status {
+    top: 100px;
+    right: 278px;
+}
+.date-expire {
+    top: 160px;
+    right: 100px;
+}
+.date-expire > span {
+    letter-spacing: 1px;
+}
+.lone-number {
+    top: 160px;
+    right: 25px;
 }
