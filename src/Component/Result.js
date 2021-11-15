@@ -76,6 +76,7 @@ const Result = (props) => {
                     </p>
                     <p className="lone-number">{toArabicNumeral(1)}</p>
                 </div>
+                <h3 className="fake-it">مزيفة/Fake</h3>
             </div>
             <div>
                 <button className="btn btn-primary btn-block w-100" onClick={PdfHandler}>Download PNG</button>
