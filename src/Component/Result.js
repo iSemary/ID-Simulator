@@ -2,15 +2,34 @@ import React from 'react';
 import FrontID from '../Assets/0.jpg';
 import BackID from '../Assets/3.png';
 import DefaultAvatar from '../Assets/default-avatar-1.png';
-import {jsPDF} from "jspdf";
-import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas'
+
+function downloadURI(uri, name) {
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    link.click();
+    //after creating link you should delete dynamic link
+    //clearDynamicLink(link);
+}
+
+function PdfHandler() {
+
+    html2canvas(document.getElementById('PDFTarget')).then(canvas =>
+
+        downloadURI("data:" + canvas.toDataURL("image/png"), "yourImage.png")
+    );
+    // console.log(img[1])
+
+}
 
 const Result = (props) => {
     function toArabicNumeral(en) {
-        return ("" + en).replace(/[0-9]/g, function(t) {
+        return ("" + en).replace(/[0-9]/g, function (t) {
             return "٠١٢٣٤٥٦٧٨٩".substr(+t, 1);
         });
     }
+
     return (
         <section className="mt-2">
             <div className="img-holder" id="PDFTarget">
@@ -18,7 +37,7 @@ const Result = (props) => {
                     <img src={FrontID} className="id-img" alt="front-id"/>
                     <p className="first-name">{props.name ? props.name.substring(0, props.name.indexOf(" ")) : ''}</p>
                     <p className="last-name">{props.name ? props.name.substring(props.name.indexOf(" ")) : ''}</p>
-                    <p className="address">{props.address}</p>
+                    <p className="address">{props.address ? toArabicNumeral(props.address) : ''}</p>
                     <p className="center-city">
                         <span>{props.center}</span>
                         <span>&nbsp;-&nbsp;</span>
@@ -59,11 +78,10 @@ const Result = (props) => {
                 </div>
             </div>
             <div>
-                {/*<button className="btn btn-primary btn-block w-100" onClick={PdfHandler()}>Convert PDF</button>*/}
+                <button className="btn btn-primary btn-block w-100" onClick={PdfHandler}>Download PNG</button>
             </div>
         </section>
     )
 }
-// }
 
 export default Result;

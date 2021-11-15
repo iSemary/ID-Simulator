@@ -8,10 +8,8 @@ class FormFill extends Component {
         super(props);
         this.state = {value: ''};
         this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
     }
     onSubmit = (values) => {
-        // console.log(values);
     }
     FormSchema = () => {
         let schema = yup.object().shape({
@@ -36,17 +34,6 @@ class FormFill extends Component {
             last_digits: event.target.name === 'last_digits' ? event.target.value:this.state.last_digits,
             avatar: event.target.name === 'avatar' ? event.target.files:this.state.avatar,
         });
-        // function replaceDigits() {
-        //     let map = ["&\#1776;", "&\#1777;", "&\#1778;", "&\#1779;", "&\#1780;", "&\#1781;", "&\#1782;", "&\#1783;", "&\#1784;", "&\#1785;"]
-        //     document.body.innerHTML = document.body.innerHTML.replace(/\d(?=[^<>]*(<|$))/g, function ($0) {
-        //         return map[$0]
-        //     });
-
-
-
-
-        // }
-        // replaceDigits();
     }
 
     handleChangeAvatar = (event) => {
@@ -152,7 +139,6 @@ class FormFill extends Component {
                                className="form-control" type="number" placeholder="Enter your last 5 digits"/>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-success btn-block w-100">Submit</button>
             </Form>
         )
     }
@@ -169,7 +155,7 @@ class FormFill extends Component {
                         >
                     {this.form}
                 </Formik>
-
+                <hr/>
                 <Result name={this.state.name}
                         address={this.state.address}
                         center={this.state.center}
